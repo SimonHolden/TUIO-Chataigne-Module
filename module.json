@@ -33,7 +33,7 @@
 		"Touch Slots": {
 			"type": "Integer",
 			"description": "Number of touch slots per frame (and in All Frames). A new touch takes the lowest free slot and keeps it until it lifts.",
-			"default": 5,
+			"default": 10,
 			"min": 1,
 			"max": 20
 		},
