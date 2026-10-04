@@ -5,8 +5,8 @@
 
 	"version": "1.0.0",
 	"description": "Receive TUIO 1.1 multitouch (2D cursors) with multiple sources. Each touch frame / source gets its own container with stable touch slots, plus a combined All Frames container.",
-	"url": "https://github.com/SimonHolden/chataigne-tuio-module",
-	"downloadURL": "https://github.com/SimonHolden/chataigne-tuio-module/archive/refs/heads/main.zip",
+	"url": "https://github.com/SimonHolden/TUIO-Chataigne-Module",
+	"downloadURL": "https://github.com/SimonHolden/TUIO-Chataigne-Module/archive/refs/heads/master.zip",
 
 	"hasInput": true,
 	"hasOutput": false,
