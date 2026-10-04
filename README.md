@@ -33,7 +33,7 @@ It listens on UDP **3333**, the TUIO default. You can change the port under OSC 
 
 | Parameter | Meaning |
 |---|---|
-| Touch Slots | Slots per frame and in All Frames (1 to 20, default 5) |
+| Touch Slots | Slots per frame and in All Frames (1 to 20, default 10) |
 | Invert Y | TUIO puts y = 0 at the top. Tick this to put y = 0 at the bottom |
 | Timeout | Seconds of silence before a source is marked offline and its touches cleared |
 | Clear Offline Frames | Removes containers for frames that aren't currently sending |
