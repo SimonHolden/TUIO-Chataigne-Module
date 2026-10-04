@@ -1,0 +1,84 @@
+{
+	"name": "TUIO",
+	"type": "OSC",
+	"path": "Protocol",
+
+	"version": "1.0.0",
+	"description": "Receive TUIO 1.1 multitouch (2D cursors) with multiple sources. Each touch frame / source gets its own container with stable touch slots, plus a combined All Frames container.",
+	"url": "https://github.com/SimonHolden/chataigne-tuio-module",
+	"downloadURL": "https://github.com/SimonHolden/chataigne-tuio-module/archive/refs/heads/main.zip",
+
+	"hasInput": true,
+	"hasOutput": false,
+	"hideDefaultCommands": true,
+	"hideDefaultParameters": [
+		"autoAdd",
+		"splitArgs",
+		"useHierarchy",
+		"autoFeedback",
+		"colorSendMode",
+		"booleanSendMode",
+		"clearValues",
+		"autoRange"
+	],
+
+	"defaults": {
+		"autoAdd": false,
+		"OSC Input": {
+			"localPort": 3333
+		}
+	},
+
+	"parameters": {
+		"Touch Slots": {
+			"type": "Integer",
+			"description": "Number of touch slots per frame (and in All Frames). A new touch takes the lowest free slot and keeps it until it lifts.",
+			"default": 5,
+			"min": 1,
+			"max": 20
+		},
+		"Invert Y": {
+			"type": "Boolean",
+			"description": "TUIO puts y = 0 at the top. Tick to make y = 0 the bottom.",
+			"default": false
+		},
+		"Timeout": {
+			"type": "Float",
+			"description": "Seconds without any message from a source before its touches are cleared and it is shown as offline.",
+			"default": 1.5,
+			"min": 0.2,
+			"max": 10
+		},
+		"Clear Offline Frames": {
+			"type": "Trigger",
+			"description": "Remove containers for frames that are not currently sending."
+		}
+	},
+
+	"values": {
+		"Status": {
+			"type": "Container",
+			"Receiving": {
+				"type": "Boolean",
+				"description": "TUIO data received within the timeout",
+				"readOnly": true
+			},
+			"Frames Online": {
+				"type": "Integer",
+				"description": "Sources currently sending",
+				"min": 0,
+				"readOnly": true
+			},
+			"Total Touches": {
+				"type": "Integer",
+				"description": "Touches down across all frames",
+				"min": 0,
+				"readOnly": true
+			}
+		}
+	},
+
+	"scripts": [
+		"tuio.js"
+	]
+}
